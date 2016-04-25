@@ -8,25 +8,27 @@ Language: Swift
 
 The On The Map app allows users to share their location and a URL with their fellow students. To visualize this data, On The Map uses a map with pins for location and pin annotations for student names and URLs, allowing students to place themselves “on the map,” so to speak.
 
+![onthemap](https://cloud.githubusercontent.com/assets/2106935/14801744/16e2bf0a-0b22-11e6-944a-b5c97cc6e565.gif)
+
 ## Implementation
 
 The app has four view controller scenes:
 
-- **LoginController** - allows the user to log in using their Udacity credentials. 
+- **LoginViewController** - allows the user to log in using their Udacity credentials. 
   
   When the user taps the Login button, the app will attempt to authenticate with Udacity’s servers. Clicking on the Sign Up link will open Safari to the Udacity sign-in page.
   
   If the login does not succeed, the user will be presented with an alert view specifying whether it was a failed network connection, or an incorrect email and password.
 
-- **MapController** - displays a map with pins specifying the last 100 locations posted by students. 
+- **MapViewController** - displays a map with pins specifying the last 100 locations posted by students. 
   
   When the user taps a pin, it displays the pin annotation popup, with the student’s name (pulled from their Udacity profile) and the link associated with the student’s pin.
   
   Tapping anywhere within the annotation will launch Safari and direct it to the link associated with the pin.
 
-- **ListController** - displays the most recent 100 locations posted by students in a table. Each row displays the name from the student’s Udacity profile. Tapping on the row launches Safari and opens the link associated with the student.
+- **ListViewController** - displays the most recent 100 locations posted by students in a table. Each row displays the name from the student’s Udacity profile. Tapping on the row launches Safari and opens the link associated with the student.
 
-- **PinController** - allows users to input data in two steps: first adding their location string, then their link.
+- **PostViewController** - allows users to input data in two steps: first adding their location string, then their link.
   
   When the user clicks on the “Find on the Map” button, the app will forward geocode the string. If the forward geocode fails, the app will display an alert view notifying the user.
 
